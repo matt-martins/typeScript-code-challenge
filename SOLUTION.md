@@ -37,5 +37,7 @@ app.post('/user/search', {user})
 ```
 
 > browser version for quick look
+
 > http://localhost:8080/sample
+
 > app.all( '/sample')
