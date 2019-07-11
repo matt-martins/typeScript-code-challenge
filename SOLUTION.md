@@ -28,8 +28,13 @@ sudo npm install -g mocha
 > API endpoints
 
 app.get( '/')
+
 app.get('/user/list/page/:page')
+
 app.post('/user/add', {user, email})
+
 app.post('/user/search', {user})
 
+
+--
 app.all( '/sample') -> browser version for quick look
