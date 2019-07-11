@@ -25,8 +25,8 @@ sudo npm install -g mocha
 ```
 
 
-> API endpoints
-
+# API endpoints
+```bash
 app.get( '/')
 
 app.get('/user/list/page/:page')
@@ -34,7 +34,8 @@ app.get('/user/list/page/:page')
 app.post('/user/add', {user, email})
 
 app.post('/user/search', {user})
+```
 
-
---
-app.all( '/sample') -> browser version for quick look
+-> browser version for quick look
+-> http://localhost:8080/sample
+-> app.all( '/sample')
