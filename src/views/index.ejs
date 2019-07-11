@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TypeScript Code Challenge</title>
+</head>
+
+<body>
+    <h1>TypeScript Code Challenge</h1>
+    <hr />
+    <h3>Add user:</h3>
+    <form method="post" action="/user/add">
+        <p>
+            <label for="user">User:</label><br />
+            <input type="text" name="user">
+        </p>
+
+        <p>
+            <label for="email">Email:</label><br />
+            <input type="text" name="email">
+        </p>
+
+        <p><input type="submit" value="add"></p>
+    </form>
+    <hr />
+    <h3>List of users:</h3>
+    <hr />
+    <form method="post" action="/">
+        <p>
+            <label for="user">find:</label>
+            <input type="text" name="search">
+            <input type="submit" value="find">
+        </p>
+    </form>
+    <ul>
+        <% users.forEach(function(userRow) { %>
+        <li>
+              <strong><%= userRow.user %></strong> | <%= userRow.email %>
+        </li>
+        <% }); %>
+    </ul>
+</body>
+
+</html>
