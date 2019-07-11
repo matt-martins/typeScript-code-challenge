@@ -21,12 +21,13 @@ const User = require('./models/User');
 app.set( 'views', path.join( __dirname, 'views' ) );
 app.set( 'view engine', 'ejs' );
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get( '/', ( req, res ) => {
-    res.json({'version': 1.0})
+    res.status(200).json({'version': 1.0})
 });
 
-app.get('/user/list/page/:page', (req, res) => {
+app.get('/user/list/page/:page', ( req, res ) => {
     const pageSize = 3
     const page = req.params.page-1;
 
@@ -37,7 +38,9 @@ app.get('/user/list/page/:page', (req, res) => {
         .catch( err => res.status(404).json({ status: 'Users not found' }) );
 });
 
-app.post('/user/add', (req, res) => {
+app.post('/user/add', ( req, res ) => {
+
+    console.info( 'body', req.body )
 
     const newUser = new User({
         user: req.body.user,
@@ -45,7 +48,7 @@ app.post('/user/add', (req, res) => {
     });
 
     newUser.save()
-           .then( user => res.json({ status: 'success' }) )
+           .then( user => res.status(200).json({ status: 'success' }) )
            .catch( err => res.status(404).json({ status: err } ))
 
 });
