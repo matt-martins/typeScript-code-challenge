@@ -19,9 +19,13 @@ docker-compose down
 
 sudo npm install -g mocha
 
-2) Run docker image
+2) Instal npm packages for the project
 
-3) In a new tab execute: mocha
+sudo npm install
+
+3) Run docker image
+
+4) In a new tab execute: mocha
 ```
 
 
